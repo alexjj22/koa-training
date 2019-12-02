@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/alexjj22/koa-training/issues"
   },
-  "homepage": "https://github.com/alexjj22/koa-training#readme"
+  "homepage": "https://github.com/alexjj22/koa-training#readme",
+  "dependencies": {
+    "koa": "^2.11.0"
+  }
 }
