@@ -1,0 +1,19 @@
+{
+  "name": "koa-training",
+  "version": "1.0.0",
+  "description": "service for some important staff",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexjj22/koa-training.git"
+  },
+  "author": "alexjj22",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexjj22/koa-training/issues"
+  },
+  "homepage": "https://github.com/alexjj22/koa-training#readme"
+}
