@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/alexjj22/koa-training#readme",
   "dependencies": {
-    "koa": "^2.11.0"
+    "koa": "^2.11.0",
+    "koa-favicon": "^2.0.1"
   }
 }
