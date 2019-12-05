@@ -9,4 +9,5 @@ module.exports = {
     uri: 'mongodb://localhost/koa-test-app',
     debug: true,
   },
+  templatesRoot: path.join(process.cwd() + '/templates/')
 }
