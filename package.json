@@ -4,7 +4,8 @@
   "description": "service for some important staff",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,12 @@
     "mongoose": "^5.7.13",
     "mongoose-beautiful-unique-validation": "^7.1.1",
     "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  },
+  "nodemonConfig": {
+    "ignore": ["test/**", "README"],
+    "delay": "3"
   }
 }
