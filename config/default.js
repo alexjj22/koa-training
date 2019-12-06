@@ -5,9 +5,15 @@ module.exports = {
     host: 'http://localhost',
     port: 3000,
   },
-  mongo: {
+  mongodb: {
     uri: 'mongodb://localhost/koa-test-app',
     debug: true,
   },
-  templatesRoot: path.join(process.cwd() + '/templates/')
+  templatesRoot: path.join(process.cwd() + '/templates/'),
+  crypto: {
+    hash: {
+      length: 128,
+      iterations: 10,
+    }
+  }
 }

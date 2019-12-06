@@ -7,8 +7,9 @@ const User = require('../models/User');
     await User.deleteMany();
 
     for (let user of users) {
-      await new User(user).
-      save();
+      const u = new User(user);
+      await u.setPassword(user.password);
+      await u.save();
     }
     mongoose.disconnect();
     console.log('Users have been successfully stored in a database!');
