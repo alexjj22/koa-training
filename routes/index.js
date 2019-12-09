@@ -6,5 +6,6 @@ const router = new Router();
 
 router.get('/', frontpage.get);
 router.get('/registration', registration.getRegistration);
+router.post('/registration', registration.postRegistration);
 
 module.exports = router;

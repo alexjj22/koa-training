@@ -23,15 +23,20 @@
     "koa-bodyparser": "^4.2.1",
     "koa-favicon": "^2.0.1",
     "koa-router": "^7.4.0",
+    "koa-session": "^5.12.3",
     "mongoose": "^5.7.13",
     "mongoose-beautiful-unique-validation": "^7.1.1",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "uuidv4": "^6.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.1"
   },
   "nodemonConfig": {
-    "ignore": ["test/**", "README"],
+    "ignore": [
+      "test/**",
+      "README"
+    ],
     "delay": "3"
   }
 }
