@@ -15,5 +15,13 @@ module.exports = {
       length: 128,
       iterations: 10,
     }
-  }
+  },
+  mailer: {
+    senders:  {
+      default:  {
+        email: 'koa.test.app@gmail.com',
+        name:  'alexjj22',
+      },
+    }
+  },
 }

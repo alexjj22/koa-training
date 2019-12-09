@@ -1,13 +1,15 @@
+const config = require('config');
 const { uuid } = require('uuidv4');
 const RegistrationRecord = require('../models/RegistrationRecord');
 const User = require('../models/User');
+const sendEmail = require('../libs/sendEmail')
 
 module.exports = {
-  getRegistration(ctx, next) {
+  getRegistration(ctx) {
     ctx.body = ctx.render('registration.pug');
   },
   async postRegistration(ctx) {
-    const email = ctx.request.body.email;
+    const { email } = ctx.request.body;
 
     try {
       const user = await User.findOne({ email });
@@ -26,6 +28,15 @@ module.exports = {
       });
 
       await record.save();
+
+      await sendEmail({
+        to: email,
+        template: 'registration',
+        subject: 'Email confirmation',
+        locals: {
+          link: `${config.get('server.host')}:${config.get('server.port')}/confirmRegistration/${verifyToken}`
+        },
+      });
 
       ctx.flash('success', 'Thanks! We have sent further instructions for reginstration to your e-mail.');
       return ctx.redirect('/registration');
