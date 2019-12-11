@@ -1,0 +1,18 @@
+extends layout.pug
+
+block content
+  if registrationRecord
+    form#loginForm(action="/confirmRegistration" method="post")
+      h1 Please, finish registration
+  
+      .form-group
+        label(for="username") Username
+        input.form-control(type="text" id="username" name="username" placeholder="alexjj22" required autofocus)
+      .form-group
+        label(for="password") Password
+        input.form-control(type="password" id="password" name="password" required)
+
+      button.btn.btn-primary.btn-block(type="submit") Send
+  else 
+    h1 Current link is outdated 
+    a(href='/') Back to login
