@@ -67,6 +67,13 @@ UserSchema.methods.setPassword = async function (password)  {
   this.passwordHash = await generatePassword(password, this.salt);
 }
 
+UserSchema.methods.checkPassword = async function(password) {
+  if (!password) return false;
+
+  const hash = await generatePassword(password, this.salt);
+  return hash === this.passwordHash;
+}
+
 module.exports = mongoose.model('User', UserSchema);
 
 
