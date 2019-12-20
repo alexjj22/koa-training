@@ -5,3 +5,6 @@ block content
   h1 Welcome, #{user.username}. Your email: #{user.email}.
 
   p.greeting You are logged in.
+
+  form(action="/logout" method="post")
+    button.btn.btn-primary(type="submit") Logout
