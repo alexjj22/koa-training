@@ -1,5 +1,8 @@
 extends layout.pug
 
+block append head
+  title Confirm registration page
+
 block content
   if registrationRecord
     form#loginForm(action="/confirmRegistration" method="post")

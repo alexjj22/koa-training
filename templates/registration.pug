@@ -1,5 +1,8 @@
 extends layout.pug
 
+block append head
+  title Registration page
+
 block content
   form#loginForm(action="/registration" method="post")
     h1 Send us your email
