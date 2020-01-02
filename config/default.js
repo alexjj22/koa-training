@@ -4,6 +4,7 @@ module.exports = {
   server: {
     host: 'http://localhost',
     port: 3000,
+    testPort: 3002,
   },
   mongodb: {
     uri: 'mongodb://localhost/koa-test-app',

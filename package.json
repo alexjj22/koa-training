@@ -37,6 +37,8 @@
     "passport-google-oauth": "^2.0.0",
     "passport-local": "^1.0.0",
     "pug": "^2.0.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5",
     "uuidv4": "^6.0.0"
   },
   "devDependencies": {
@@ -49,5 +51,12 @@
       "README"
     ],
     "delay": "3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "setupFiles": ["dotenv/config"]
   }
 }
