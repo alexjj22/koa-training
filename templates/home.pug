@@ -2,12 +2,19 @@ extends layout
 
 block append head
   title Home page
-
+  
 block content
 
   h1 Welcome, #{user.username}. Your email: #{user.email}.
+
+  form#avatar-form(action="/avatar" method="post" style="margin-bottom: 15px;")
+    input#avatar(type="file")
+    button.btn.btn-primary(type="submit") Upload photo
 
   p.greeting You are logged in.
 
   form(action="/logout" method="post")
     button.btn.btn-primary(type="submit") Logout
+
+block scripts
+  script(src='/sendFile.js')

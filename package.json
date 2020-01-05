@@ -21,6 +21,7 @@
     "config": "^3.2.4",
     "dotenv": "^8.2.0",
     "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
     "koa-bodyparser": "^4.2.1",
     "koa-favicon": "^2.0.1",
     "koa-logger": "^3.2.1",
@@ -28,6 +29,7 @@
     "koa-router": "^7.4.0",
     "koa-session": "^5.12.3",
     "koa-session-mongoose": "^2.0.5",
+    "koa-static": "^5.0.0",
     "lodash": "^4.17.15",
     "mongoose": "^5.7.13",
     "mongoose-beautiful-unique-validation": "^7.1.1",
@@ -57,6 +59,8 @@
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ],
-    "setupFiles": ["dotenv/config"]
+    "setupFiles": [
+      "dotenv/config"
+    ]
   }
 }

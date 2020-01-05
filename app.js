@@ -4,6 +4,7 @@ const router = require('./routes')
 const app = new Koa();
 
 require('./handlers/favicon').init(app);
+require('./handlers/static').init(app);
 require('./handlers/logger').init(app);
 require('./handlers/templates').init(app);
 require('./handlers/errors').init(app);
