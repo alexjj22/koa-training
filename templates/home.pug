@@ -7,14 +7,12 @@ block content
 
   h1 Welcome, #{user.username}. Your email: #{user.email}.
 
-  form#avatar-form(action="/avatar" method="post" style="margin-bottom: 15px;")
-    input#avatar(type="file")
+  form#avatar-form(action="/avatar" enctype="multipart/form-data" method="post" style="margin-bottom: 15px;" )
+    input#avatar(type="file" name="avatar")
     button.btn.btn-primary(type="submit") Upload photo
 
   p.greeting You are logged in.
 
   form(action="/logout" method="post")
     button.btn.btn-primary(type="submit") Logout
-
-block scripts
-  script(src='/sendFile.js')
+    

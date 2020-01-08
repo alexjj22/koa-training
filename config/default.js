@@ -11,6 +11,7 @@ module.exports = {
     debug: true,
   },
   templatesRoot: path.join(process.cwd() + '/templates/'),
+  avatarRoot: path.join(process.cwd() + '/avatars/'),
   crypto: {
     hash: {
       length: 128,
