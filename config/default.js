@@ -32,5 +32,11 @@ module.exports = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: 'http://localhost:3000/oauth/google',
     }
+  },
+  testAccaunt: {
+    google: {
+      email: process.env.EMAIL,
+      password: process.env.PASSWORD,
+    }
   }
 }
