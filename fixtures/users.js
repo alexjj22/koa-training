@@ -1,7 +1,7 @@
 const users = [{
   email: 'user1@test.com',
   username: 'Anonymus',
-  password: '123456',
-}];
+  password: '123456'
+}]
 
-module.exports = users;
+module.exports = users

@@ -1,3 +1,3 @@
-const logger = require('koa-logger');
+const logger = require('koa-logger')
 
-module.exports.init = app => app.use(logger());
+module.exports.init = app => app.use(logger())

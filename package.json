@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "lint": "npx standard",
+    "lint-fix": "npx standard --fix"
   },
   "repository": {
     "type": "git",
@@ -48,7 +50,8 @@
   },
   "devDependencies": {
     "jest": "^24.9.0",
-    "nodemon": "^2.0.1"
+    "nodemon": "^2.0.1",
+    "standard": "^14.3.1"
   },
   "nodemonConfig": {
     "ignore": [
@@ -65,5 +68,8 @@
     "setupFiles": [
       "dotenv/config"
     ]
+  },
+  "standard": {
+    "env": [ "jest" ]
   }
 }

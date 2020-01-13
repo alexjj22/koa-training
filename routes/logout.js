@@ -1,6 +1,6 @@
 
-module.exports.post = function(ctx, next) {
-  ctx.logout();
+module.exports.post = function (ctx, next) {
+  ctx.logout()
 
-  ctx.redirect('/');
+  ctx.redirect('/')
 }
