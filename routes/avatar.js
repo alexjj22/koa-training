@@ -36,7 +36,9 @@ module.exports = {
       const user = ctx.state.user
       const userAvatarDir = path.join(config.get('avatarRoot'), user._id.toString())
       const oldAvatar = user.image
+      const oldAvatarFile = path.join(config.get('avatarRoot'), oldAvatar || '')
       const filePath = path.join(userAvatarDir, file.name)
+      const imageUrl = path.join(user._id.toString(), file.name)
 
       if (!oldAvatar && !fs.existsSync(userAvatarDir)) {
         fs.mkdirSync(userAvatarDir)
@@ -51,11 +53,11 @@ module.exports = {
         .pipe(ws)
         .on('error', (e) => streamErrorHandle(e, filePath))
 
-      user.image = filePath
+      user.image = imageUrl
 
       await user.save()
 
-      if (oldAvatar && oldAvatar !== filePath) fs.unlink(oldAvatar, () => {})
+      if (oldAvatar && oldAvatar !== imageUrl) fs.unlink(oldAvatarFile, () => {})
 
       ctx.flash('success', 'image: you have upload avatar image successfully!')
       ctx.redirect('/')

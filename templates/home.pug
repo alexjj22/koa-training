@@ -11,6 +11,9 @@ block content
     input#avatar(type="file" name="avatar")
     button.btn.btn-primary(type="submit") Upload photo
 
+  if user.image
+    img(src=user.image width=200)
+
   p.greeting You are logged in.
 
   form(action="/logout" method="post")
