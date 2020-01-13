@@ -10,8 +10,8 @@ const transporter = nodemailer.createTransport(new SMTPTransport({
   host: 'smtp.gmail.com',
   debug: true,
   auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD,
+    user: config.get('mailUser.email'),
+    pass: config.get('mailUser.password'),
   },
   tls: {
     // do not fail on invalid certs
