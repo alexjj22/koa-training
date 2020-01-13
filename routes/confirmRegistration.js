@@ -14,37 +14,24 @@ module.exports = {
   },
   async post(ctx) {
     const verifyToken = last(split(ctx.request.header.referer, '/'));
-
+    const errorRedirectUrl = `/confirmRegistration/${verifyToken}`;
     const { username, password } = ctx.request.body;
 
-    try {
-      const record = await RegistrationRecord.findOne({
-        verifyToken
-      });
+    ctx.errorRedirectUrl = errorRedirectUrl;
 
-      const user = new User({
-        username,
-        email: record.email,
-      });
+    const record = await RegistrationRecord.findOne({
+      verifyToken
+    });
 
-      await user.setPassword(password);
-      await user.save();
-      await record.remove();
+    const user = new User({
+      username,
+      email: record.email,
+    });
 
-      ctx.body = ctx.render('registered.pug');
-    } catch (e) {
-      if (e.name === 'ValidationError') {
-        let errorMessages = '';
-        for(let key in e.errors) {
-          errorMessages += `${key}: ${e.errors[key].message}<br>`;
-        }
-        ctx.flash('error', errorMessages);
-        return ctx.redirect(`/confirmRegistration/${verifyToken}`);
-      } else {
-        throw e;
-      }
-    }
+    await user.setPassword(password);
+    await user.save();
+    await record.remove();
 
-
+    ctx.body = ctx.render('registered.pug');
   }
 }
