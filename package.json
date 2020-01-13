@@ -49,6 +49,7 @@
     "uuidv4": "^6.0.0"
   },
   "devDependencies": {
+    "husky": "^4.0.7",
     "jest": "^24.9.0",
     "nodemon": "^2.0.1",
     "standard": "^14.3.1"
@@ -70,6 +71,13 @@
     ]
   },
   "standard": {
-    "env": [ "jest" ]
+    "env": [
+      "jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }
