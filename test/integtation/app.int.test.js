@@ -1,11 +1,12 @@
 const assert = require('assert')
 const rp = require('request-promise')
 const config = require('config')
-const app = require('../../app')
 const mongoose = require('../../libs/mongoose')
+const app = require('../../app')
 const User = require('../../models/User')
 
 const host = `http://localhost:${config.get('server.testPort')}`
+
 function getURL (path) {
   return `${host}${path}`
 };
@@ -71,8 +72,6 @@ describe('server', () => {
 
       assert.ok(res.includes('<title>Home page</title>'))
       assert.ok(res.includes('You are welcome'))
-
-      await user.deleteOne({ email: 'test@test.com' })
     } catch (e) {
       console.log(e)
     }

@@ -7,7 +7,7 @@ module.exports = {
     testPort: 3002
   },
   mongodb: {
-    uri: 'mongodb://localhost/koa-test-app',
+    uri: process.env.MONGODB_URL,
     debug: true
   },
   templatesRoot: path.join(process.cwd() + '/templates/'),

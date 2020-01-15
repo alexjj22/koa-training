@@ -4,7 +4,7 @@
   "description": "service for some important staff",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "start": "nodemon index.js",
     "lint": "npx standard",
     "lint-fix": "npx standard --fix"
@@ -49,6 +49,7 @@
     "uuidv4": "^6.0.0"
   },
   "devDependencies": {
+    "@shelf/jest-mongodb": "^1.1.3",
     "husky": "^4.0.7",
     "jest": "^24.9.0",
     "nodemon": "^2.0.1",
@@ -62,7 +63,7 @@
     "delay": "3"
   },
   "jest": {
-    "testEnvironment": "node",
+    "preset": "@shelf/jest-mongodb",
     "coveragePathIgnorePatterns": [
       "/node_modules/"
     ],
@@ -79,5 +80,12 @@
     "hooks": {
       "pre-commit": "npm run lint"
     }
+  },
+  "mongodbMemoryServerOptions": {
+    "autoStart": false,
+    "instance": {
+      "dbName": "jest"
+    },
+    "debug": "1"
   }
 }
